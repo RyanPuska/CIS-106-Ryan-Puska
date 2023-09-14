@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-13 02:38:00 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTEzOzAyOjIwOjE4IFBNOzI3ODU="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTEzOzAyOjM4OjAwIFBNOzE7Mjg5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="shareprice" type="Real" array="False" size=""/>
+            <declare name="stockprice" type="Real" array="False" size=""/>
+            <declare name="stockquant" type="Integer" array="False" size=""/>
+            <declare name="value" type="Real" array="False" size=""/>
+            <input variable="shareprice"/>
+            <input variable="stockprice"/>
+            <input variable="stockquant"/>
+            <assign variable="value" expression="(stockprice-shareprice)*stockquant"/>
+            <if expression="value&lt;0">
+                <then>
+                    <output expression="&quot;You are losing money.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;You are gaining money.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

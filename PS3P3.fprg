@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-13 03:52:29 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTEzOzAyOjQwOjQxIFBNOzI3ODM="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTEzOzAzOjUyOjI5IFBNOzQ7MjkwNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="tipA" type="Real" array="False" size=""/>
+            <declare name="tipB" type="Real" array="False" size=""/>
+            <declare name="tipC" type="Real" array="False" size=""/>
+            <declare name="totalA" type="Real" array="False" size=""/>
+            <declare name="totalB" type="Real" array="False" size=""/>
+            <declare name="totalC" type="Real" array="False" size=""/>
+            <input variable="total"/>
+            <assign variable="tipA" expression="total*.15"/>
+            <assign variable="tipB" expression="total*.18"/>
+            <assign variable="tipC" expression="total*.20"/>
+            <assign variable="totalA" expression="total+tipA"/>
+            <assign variable="totalB" expression="total+tipB"/>
+            <assign variable="totalC" expression="total+tipC"/>
+            <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+            <output expression="&quot;Tip: $&quot; &amp; tipA" newline="True"/>
+            <output expression="&quot;Total with tip: $&quot; &amp; totalA" newline="True"/>
+            <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+            <output expression="&quot;Tip: $&quot; &amp; tipB" newline="True"/>
+            <output expression="&quot;Total with tip: $&quot; &amp; totalB" newline="True"/>
+            <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+            <output expression="&quot;Tip: $&quot; &amp; tipC" newline="True"/>
+            <output expression="&quot;Total with tip: $&quot; &amp; totalC" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
