@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-20 08:45:58 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTIwOzA4OjE1OjIzIFBNOzI3ODk="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTIwOzA4OjQ1OjU4IFBNOzE7MjkwOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lname" type="String" array="False" size=""/>
+            <declare name="numdep" type="Integer" array="False" size=""/>
+            <declare name="grossinc" type="Real" array="False" size=""/>
+            <declare name="adjinc" type="Real" array="False" size=""/>
+            <declare name="taxr8" type="Real" array="False" size=""/>
+            <declare name="inctax" type="Real" array="False" size=""/>
+            <input variable="lname"/>
+            <input variable="numdep"/>
+            <input variable="grossinc"/>
+            <assign variable="adjinc" expression="(grossinc-numdep)*12000"/>
+            <if expression="adjinc &gt; 50000">
+                <then>
+                    <assign variable="taxr8" expression="0.20"/>
+                </then>
+                <else>
+                    <assign variable="taxr8" expression="0.10"/>
+                </else>
+            </if>
+            <assign variable="inctax" expression="adjinc*taxr8"/>
+            <if expression="inctax&lt;0">
+                <then>
+                    <assign variable="inctax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Last name: &quot; &amp; lname" newline="True"/>
+            <output expression="&quot;Gross income: $&quot; &amp; grossinc" newline="True"/>
+            <output expression="&quot;Number of dependents: &quot; &amp; numdep" newline="True"/>
+            <output expression="&quot;Adjusted gross income: $&quot; &amp; adjinc" newline="True"/>
+            <output expression="&quot;Income tax: $&quot; &amp; inctax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-20 08:15:18 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTIwOzA3OjU5OjI3IFBNOzI4MDA="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTIwOzA4OjE1OjE4IFBNOzI7MjkwMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="appname" type="String" array="False" size=""/>
+            <declare name="appcost" type="Real" array="False" size=""/>
+            <declare name="warcost" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="appname"/>
+            <input variable="appcost"/>
+            <if expression="appcost &lt;= 1000">
+                <then>
+                    <assign variable="warcost" expression="appcost*0.05"/>
+                </then>
+                <else>
+                    <assign variable="warcost" expression="appcost*0.10"/>
+                </else>
+            </if>
+            <assign variable="total" expression="warcost+appcost"/>
+            <output expression="&quot;Appliance name: &quot; &amp; appname" newline="True"/>
+            <output expression="&quot;Appliance cost: $&quot; &amp; appcost" newline="True"/>
+            <output expression="&quot;Warranty cost: $&quot; &amp; warcost" newline="True"/>
+            <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
