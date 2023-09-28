@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-28 05:20:10 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTI4OzAzOjUyOjUzIFBNOzI3OTY="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTA5LTI4OzA1OjIwOjEwIFBNOzQ7Mjg5Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principle" type="Real" array="False" size=""/>
+            <declare name="mature" type="Real" array="False" size=""/>
+            <declare name="intrate" type="Real" array="False" size=""/>
+            <declare name="intamt" type="Real" array="False" size=""/>
+            <input variable="principle"/>
+            <input variable="mature"/>
+            <if expression="principle &gt; 100000 AND mature = 5">
+                <then>
+                    <assign variable="intrate" expression=".06"/>
+                </then>
+                <else>
+                    <if expression="principle &gt; 50000 AND mature = 10">
+                        <then>
+                            <assign variable="intrate" expression=".05"/>
+                        </then>
+                        <else>
+                            <if expression="principle &gt; 50000 AND mature = 5">
+                                <then>
+                                    <assign variable="intrate" expression=".04"/>
+                                </then>
+                                <else>
+                                    <assign variable="intrate" expression=".02"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="intamt" expression="principle*intrate"/>
+            <output expression="principle" newline="True"/>
+            <output expression="intrate*100 &amp; &quot;%&quot;" newline="True"/>
+            <output expression="intamt" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
