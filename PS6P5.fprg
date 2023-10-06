@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-06 03:09:44 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTEwLTA1OzA0OjAzOjU4IFBNOzI3ODU="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTEwLTA2OzAzOjA5OjQ0IFBNOzM7Mjg5Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="discamt" type="Real" array="False" size=""/>
+            <declare name="disctotal" type="Real" array="False" size=""/>
+            <declare name="totalorder" type="Real" array="False" size=""/>
+            <declare name="sumdiscamt" type="Real" array="False" size=""/>
+            <declare name="numorders" type="Integer" array="False" size=""/>
+            <assign variable="numorders" expression="0"/>
+            <assign variable="sumdiscamt" expression="0"/>
+            <output expression="&quot;Do you want to calculate total order with discount? &quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;yes&quot;">
+                <input variable="qty"/>
+                <input variable="price"/>
+                <assign variable="extprice" expression="qty*price"/>
+                <if expression="extprice &gt; 10000">
+                    <then>
+                        <assign variable="discamt" expression="extprice*0.25"/>
+                    </then>
+                    <else>
+                        <assign variable="discamt" expression="extprice*.10"/>
+                    </else>
+                </if>
+                <assign variable="totalorder" expression="extprice - discamt"/>
+                <assign variable="sumdiscamt" expression="sumdiscamt + discamt"/>
+                <assign variable="numorders" expression="numorders + 1"/>
+                <output expression="&quot;Extended price is: $&quot; &amp; extprice" newline="True"/>
+                <output expression="&quot;Discount amount: $&quot; &amp; discamt" newline="True"/>
+                <output expression="&quot;Total order amount: $&quot; &amp; totalorder" newline="True"/>
+                <output expression="&quot;Do you want to enter another order? &quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;Total discounts given: $&quot; &amp; sumdiscamt" newline="True"/>
+            <output expression="&quot;Number of orders: &quot; &amp; numorders" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

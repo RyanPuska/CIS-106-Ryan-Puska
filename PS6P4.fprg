@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ryan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-06 03:49:35 PM"/>
+        <attribute name="created" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTEwLTA2OzAzOjA5OjQ1IFBNOzI3ODc="/>
+        <attribute name="edited" value="UnlhbjtUSElTSVNNWUxBUFRPUDsyMDIzLTEwLTA2OzAzOjQ5OjM1IFBNOzQ7MjkwMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="lname" type="String" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="ratepay" type="Real" array="False" size=""/>
+            <declare name="gpay" type="Real" array="False" size=""/>
+            <declare name="sumgpay" type="Real" array="False" size=""/>
+            <declare name="avgpay" type="Real" array="False" size=""/>
+            <declare name="employnum" type="Integer" array="False" size=""/>
+            <assign variable="sumgpay" expression="0"/>
+            <assign variable="employnum" expression="0"/>
+            <output expression="&quot;Would you like to participate in this program? &quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;yes&quot;">
+                <output expression="&quot;Enter last name: &quot;" newline="True"/>
+                <input variable="lname"/>
+                <output expression="&quot;Enter hours worked: &quot;" newline="True"/>
+                <input variable="hours"/>
+                <output expression="&quot;Enter rate of pay:&quot;" newline="True"/>
+                <input variable="ratepay"/>
+                <if expression="hours &gt;= 40">
+                    <then>
+                        <assign variable="gpay" expression="(40*ratepay) + (hours-40)*1.5*ratepay"/>
+                    </then>
+                    <else>
+                        <assign variable="gpay" expression="ratepay*hours"/>
+                    </else>
+                </if>
+                <output expression="&quot;Gross pay: $&quot; &amp; gpay" newline="True"/>
+                <assign variable="sumgpay" expression="sumgpay + gpay"/>
+                <assign variable="employnum" expression="employnum+1"/>
+                <output expression="&quot;Would you like to enter again?&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <assign variable="avgpay" expression="sumgpay/employnum"/>
+            <output expression="&quot;Sum of all gross pay: $&quot; &amp; sumgpay" newline="True"/>
+            <output expression="&quot;Number of employees entered: &quot; &amp; employnum" newline="True"/>
+            <output expression="&quot;Average gross pay: $&quot; &amp; avgpay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
